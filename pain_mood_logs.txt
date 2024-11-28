@@ -1,0 +1,1 @@
+Day: & "C:/Program Files/Python312/python.exe" c:/Users/PC/Desktop/AI-for-Chronic-Pain-Mental-Support/main.py, Pain: 4, Mood: 4
