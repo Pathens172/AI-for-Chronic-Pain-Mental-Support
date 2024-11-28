@@ -43,3 +43,12 @@ def record_pain_mood():
 
 # Call the function
 record_pain_mood()
+
+import firebase_admin
+from firebase_admin import credentials, firestore
+
+# Initialize Firebase
+cred = credentials.Certificate("serviceAccountKey.json")  # Path to your key file
+firebase_admin.initialize_app(cred)
+
+db = firestore.client()  # Firestore database client

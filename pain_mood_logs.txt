@@ -1,1 +1,22 @@
 Day: & "C:/Program Files/Python312/python.exe" c:/Users/PC/Desktop/AI-for-Chronic-Pain-Mental-Support/main.py, Pain: 4, Mood: 4
+
+def record_pain_mood():
+    # Input data
+    day = input("What day is it? ")
+    pain_level = int(input("On a scale of 1-10, what is your pain level? "))
+    mood_level = int(input("On a scale of 1-10, what is your mood? "))
+
+    # Save to Firebase
+    log_data = {
+        "day": day,
+        "pain_level": pain_level,
+        "mood_level": mood_level
+    }
+    db.collection("pain_logs").add(log_data)
+    print("Your log has been saved to the cloud!")
+
+    # AI suggestion
+    if mood_level <= 5:
+        print("Suggestion: Try taking a walk or meditating!")
+    else:
+        print("Suggestion: Keep up the great mood!")
